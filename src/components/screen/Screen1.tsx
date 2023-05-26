@@ -1,8 +1,6 @@
 import Button from "../shared/Button";
 import React from "react";
 import {
-  AppRegistry,
-  StyleSheet,
   Text,
   View,
   TouchableHighlight,
@@ -10,7 +8,7 @@ import {
 import type { ReactElement } from "react";
 import { useState } from "react";
 import styled from "styled-components/native";
-import { Stopwatch, Timer } from "react-native-stopwatch-timer";
+import { Stopwatch } from "../stopwatch/Stopwatch";
 
 const Container = styled.View`
   flex: 1;
@@ -86,24 +84,7 @@ function Page(): ReactElement {
   return (
     <Container>
       <StyledText testID="myText">Screen 1</StyledText>
-      <View>
-        <Stopwatch
-          laps
-          msecs
-          start={state.stopwatchStart}
-          reset={state.stopwatchReset}
-          options={options}
-          getTime={getFormattedTime}
-        />
-        <TouchableHighlight onPress={toggleStopwatch}>
-          <Text style={{ fontSize: 30 }}>
-            {!state.stopwatchStart ? "Start" : "Stop"}
-          </Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={resetStopwatch}>
-          <Text style={{ fontSize: 30 }}>Reset</Text>
-        </TouchableHighlight>
-      </View>
+      <Stopwatch />
     </Container>
   );
 }

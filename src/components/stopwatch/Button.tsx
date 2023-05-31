@@ -4,10 +4,11 @@ type ButtonProps = {
   backgroundColor: string
   color: string
   text: string
+  disabled?: boolean
   onClick: () => void
 }
 
-export const Button: FC<ButtonProps> = ({ backgroundColor, color, text, onClick }) => (
+export const Button: FC<ButtonProps> = ({ backgroundColor, color, text, disabled, onClick }) => (
   <button
     style={{
       backgroundColor,
@@ -20,6 +21,7 @@ export const Button: FC<ButtonProps> = ({ backgroundColor, color, text, onClick 
       outline: 'none',
       borderRadius: '3px'
     }}
+    disabled={disabled}
     onClick={onClick}>
       {text}
   </button>

@@ -12,7 +12,7 @@ import { Stopwatch } from "../stopwatch/Stopwatch";
 
 const Container = styled.View`
   flex: 1;
-  background-color: orange;
+  background-color: transparent;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -42,45 +42,6 @@ const initialState: stopwatchProps = {
 };
 
 function Page(): ReactElement {
-  const [state, setState] = useState(initialState);
-
-  const toggleTimer = () => {
-    setState({ timerStart: !state.timerStart, timerReset: false });
-  };
-
-  const resetTimer = () => {
-    setState({ timerStart: false, timerReset: true });
-  };
-
-  const toggleStopwatch = () => {
-    setState({
-      stopwatchStart: !state.stopwatchStart,
-      stopwatchReset: false,
-    });
-  };
-
-  const resetStopwatch = () => {
-    setState({ stopwatchStart: false, stopwatchReset: true });
-  };
-
-  const getFormattedTime = (time) => {
-    this.currentTime = time;
-  };
-  const handleTimerComplete = () => alert("custom completion function");
-
-  const options = {
-    container: {
-      backgroundColor: "#000",
-      padding: 5,
-      borderRadius: 5,
-      width: 220,
-    },
-    text: {
-      fontSize: 30,
-      color: "#FFF",
-      marginLeft: 7,
-    },
-  };
   return (
     <Container>
       <StyledText testID="myText">Screen 1</StyledText>

@@ -1,4 +1,12 @@
-function formatTimeString(time, showMsecs) {
+import { translate } from "./localize";
+
+const strings = {
+  hours: translate("hours"),
+  minutes: translate("minutes"),
+  seconds: translate("seconds"),
+};
+
+function formatTimeString(time: number, showMsecs?: boolean): string {
     let msecs = time % 1000;
     let msecsStr = "";
   
@@ -27,5 +35,27 @@ function formatTimeString(time, showMsecs) {
     return formatted;
   }
   
-  export { formatTimeString };
+function formatMsecsString(msecs: number, delimiter : string =":" ): string {
+  let minutes = Math.floor(msecs / 60);
+  let hours = Math.floor(minutes / 60);
+  
+  const secondsStr = (msecs % 60).toString().padStart(2, '0');
+  const minutesStr = (minutes % 60).toString().padStart(2, '0');
+  const hoursStr = (hours).toString().padStart(2, '0');
+
+  return hoursStr + delimiter + minutesStr + delimiter + secondsStr;  
+}
+
+function formatMsecsStringByLocale(msecs: number): string {
+  let minutes = Math.floor(msecs / 60);
+  let hours = Math.floor(minutes / 60);
+  
+  const secondsStr = (msecs % 60).toString().padStart(2, '0');
+  const minutesStr = (minutes % 60).toString().padStart(2, '0');
+  const hoursStr = (hours).toString().padStart(2, '0');
+
+  return hoursStr + strings.hours + " " + minutesStr + strings.minutes + " " + secondsStr + strings.seconds;  
+}
+
+export { formatTimeString, formatMsecsString, formatMsecsStringByLocale };
   

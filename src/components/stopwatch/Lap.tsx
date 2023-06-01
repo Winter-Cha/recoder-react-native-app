@@ -1,16 +1,22 @@
-import React, { FC } from 'react'
-import { Time } from './Time'
+import React, { FC } from "react";
+import { Time } from "./Time";
+import { View, Text } from "react-native";
 
 type LapProps = {
-  lapNumber: number
-  seconds: number
-}
+  lapNumber: number;
+  seconds: number;
+};
 
 export const Lap: FC<LapProps> = ({ lapNumber, seconds }) => (
-  <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <div style={{ marginRight: '5px' }}>
-      Lap {lapNumber}:
-    </div>
-    <Time seconds={seconds} size={'small'} />
-  </div>
-)
+  <View
+    style={{
+      marginTop: 10,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    <Text style={{ marginRight: 5 }}>Lap {lapNumber}:</Text>
+    <Time seconds={seconds} size={"small"} />
+  </View>
+);

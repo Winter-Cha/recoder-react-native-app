@@ -10,5 +10,15 @@
       "ts",
       "tsx"
     ]
+  },
+  "extra": {
+    "eas": {
+      "projectId": "86b96095-8d27-4c4f-ae8b-dcef3d4d35b1"
+    }
+  },
+  "expo": {
+    "ios": {
+      "bundleIdentifier": "com.doohyungcha.reactnavigationv6"
+    }
   }
 }

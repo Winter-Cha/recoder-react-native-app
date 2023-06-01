@@ -1,5 +1,5 @@
 import { createIntl, createIntlCache } from "@formatjs/intl";
-import {I18nManager} from "react-native";
+import { I18nManager } from "react-native";
 import * as RNLocalize from "react-native-localize";
 
 const translations = {
